@@ -1,0 +1,30 @@
+.containers {
+    margin-left: 50px;
+    margin-right: 20px;
+  }
+  .movies {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .movie {
+    padding: 5px;
+    display: flex;
+    margin-right: 20px;
+    margin-bottom: 10px;
+  }
+  .movie_body {
+    
+  }
+  .movie img {
+    transition: 300ms;
+    
+    width: 150px;
+    height: 220px;
+    opacity: .9;
+  }
+  .movie img:hover{
+    transform: scale(1.06);
+    opacity: 1;
+  }
+  
