@@ -3,7 +3,7 @@ import "./Header.css"
 function Header({user}) {
     return (
       <div className="header">
-        <h1>Ariyan</h1>
+        <h1>Movies | Ariyan | React App</h1>
       </div>
     );
   }

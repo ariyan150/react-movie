@@ -4,27 +4,31 @@
   }
   .movies {
     margin-top: 20px;
+    background-color: rgb(221, 221, 221);
+    border-radius: 15px;
+    padding: 18px 13px;
     display: flex;
     flex-wrap: wrap;
   }
   .movie {
-    padding: 5px;
     display: flex;
-    margin-right: 20px;
-    margin-bottom: 10px;
+    margin-right: 18px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.527);
   }
-  .movie_body {
-    
-  }
+  
   .movie img {
     transition: 300ms;
-    
+    border-radius: 10px;
     width: 150px;
     height: 220px;
-    opacity: .9;
+    opacity: .75;
   }
   .movie img:hover{
     transform: scale(1.06);
+    
     opacity: 1;
+    cursor: pointer;
   }
   

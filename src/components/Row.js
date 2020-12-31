@@ -2,9 +2,10 @@
  import "./Row.css"
 
 
-function Row({name}) {
+function Row({setSelectedMovie}) {
   const [movies, setmovies] = useState([])
   const [query, setQuery] = useState([""])
+  
 
   const onChange = e => {
     e.preventDefault();
@@ -19,7 +20,7 @@ function Row({name}) {
         console.log(data.Search)
       } else {
         setmovies([])
-      }
+      };
       
     });
   }
@@ -40,7 +41,7 @@ function Row({name}) {
         <div className="movies" id='row_movies'>
           {movies.map(movie => (
             <div className='movie'>
-              <div className='poster'>
+              <div className='poster' onClick={() => setSelectedMovie(movie.imdbID)}>
                 <img src={movie.Poster} alt={movie.Title} />
               </div>
             </div>
