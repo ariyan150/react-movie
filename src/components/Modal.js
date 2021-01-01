@@ -3,19 +3,23 @@ import { useState, useEffect } from 'react'
 
 
 function Modal({ selectedMovie, setSelectedMovie }) {
-    const [movie, setMovie] = useState([]);
+    const [movie, setMovie] = useState(() => '');
+    const [xy, setXy] = useState('hello');
+    
+    useEffect(()=>{
+        fetch(`http://www.omdbapi.com/?i=${selectedMovie}&apikey=af3d009a`)
+        .then((res) => res.json())
+        .then(data => setMovie(data))
+    },[])
 
-    fetch(`http://www.omdbapi.com/?i=${selectedMovie}&apikey=af3d009a`)
-    .then((res) => res.json())
-    .then(data => setMovie(data))
-    //.then(console.log(movie))
+    
 
     return (
         <div className="backdrop" onClick={() => setSelectedMovie(null)}>
             
                 <div className='movie_page'>
                     <div className='name'>
-                        {movie.Title} ({movie.Year})
+                        {movie.Title} ({movie.Year}) 
                     </div>
                     <div className='poster'>
                         <img src={movie.Poster} />
