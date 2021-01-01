@@ -5,6 +5,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
+    overflow-y: scroll;
 }
 .movie_page {
     background-color: rgb(216, 216, 216);
@@ -20,6 +21,7 @@
         "poster detail"
         / 340px 480px;
     border-radius: 5px;
+    
 }
 .name {
     grid-area: name;

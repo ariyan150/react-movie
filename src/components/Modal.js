@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 
 function Modal({ selectedMovie, setSelectedMovie }) {
     const [movie, setMovie] = useState(() => '');
-    const [xy, setXy] = useState('hello');
+    const [trailer, settrailer] = useState(null);
     
     useEffect(()=>{
         fetch(`http://www.omdbapi.com/?i=${selectedMovie}&apikey=af3d009a`)
@@ -12,17 +12,42 @@ function Modal({ selectedMovie, setSelectedMovie }) {
         .then(data => setMovie(data))
     },[])
 
-    
+    useEffect(()=>{
+        fetch(`https://youtube-search-results.p.rapidapi.com/youtube-search/?q=${movie.Title}${movie.Year} trailer`, {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "ea4ba8f6aamsh23ffbbac2f6a618p1bd384jsna311b8e29f36",
+            "x-rapidapi-host": "youtube-search-results.p.rapidapi.com"
+        }
+        })
+        .then(response => response.json())
+        .then(data => {
+            data.items && settrailer("https://www.youtube.com/embed/" + data.items[1].id)
+        })
+        
+        },[movie])
+
+        useEffect(()=>{
+            console.log(trailer)
+        },[])
 
     return (
         <div className="backdrop" onClick={() => setSelectedMovie(null)}>
             
                 <div className='movie_page'>
                     <div className='name'>
-                        {movie.Title} ({movie.Year}) 
+                        {movie.Title} ({movie.Year})
                     </div>
                     <div className='poster'>
                         <img src={movie.Poster} />
+                    </div>
+                    <div className='trailer'>
+                        {trailer &&
+                            <iframe width="560" height="315" src={trailer}
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                        }
+                        
                     </div>
                     <div className='detail'>
                         <div className='director'>
