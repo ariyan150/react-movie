@@ -10,8 +10,6 @@ function Modal({ selectedMovie, setSelectedMovie }) {
     .then(data => setMovie(data))
     //.then(console.log(movie))
 
-    
-
     return (
         <div className="backdrop" onClick={() => setSelectedMovie(null)}>
             
@@ -67,7 +65,7 @@ function Modal({ selectedMovie, setSelectedMovie }) {
                         </div>
                         <div className='rates'>
                             <div className='title_box'>Rates</div>
-                            <div className='body_box'>
+                            <div className='body_box' id='rate_body_box'>
                                 <div className='body_box_sub'>{movie.imdbRating}</div>     
                                 <div className='body_box_sub'>{movie.Metascore}</div>
                             </div>
