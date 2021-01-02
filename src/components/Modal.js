@@ -1,4 +1,5 @@
 import './Modal.css';
+import sr from './ScrollReveal'
 import { useState, useEffect } from 'react'
 
 
@@ -6,6 +7,18 @@ function Modal({ selectedMovie, setSelectedMovie }) {
     const [movie, setMovie] = useState(() => '');
     const [trailer, settrailer] = useState(null);
     
+    useEffect(()=>{
+        const config = {
+            origin: 'top',
+            duration: 1000,
+            delay: 150,
+            distance: '500px',
+            scale: 1,
+            
+          }
+        sr.reveal('.movie_page', config)
+    },[])
+
     useEffect(()=>{
         fetch(`http://www.omdbapi.com/?i=${selectedMovie}&apikey=af3d009a`)
         .then((res) => res.json())
@@ -27,9 +40,13 @@ function Modal({ selectedMovie, setSelectedMovie }) {
         
         },[movie])
 
-        useEffect(()=>{
-            console.log(trailer)
-        },[])
+    useEffect(()=>{
+        console.log(trailer)
+    },[])
+
+    
+
+    
 
     return (
         <div className="backdrop" onClick={() => setSelectedMovie(null)}>

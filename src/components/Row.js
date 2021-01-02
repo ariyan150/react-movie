@@ -1,5 +1,6 @@
  import { useState, useEffect } from 'react'
  import "./Row.css"
+ import sr from './ScrollReveal'
 
 
 function Row({setSelectedMovie}) {
@@ -24,8 +25,17 @@ function Row({setSelectedMovie}) {
       
     });
   }
-  
-  
+  useEffect(()=>{
+    const config = {
+        origin: 'top',
+        duration: 1000,
+        delay: 150,
+        distance: '500px',
+        scale: 1,
+        
+      }
+    sr.reveal('.movie', config)
+  },[])
   
     return (
       <div className="containers">
