@@ -47,7 +47,7 @@ function Modal({ selectedMovie, setSelectedMovie }) {
 
     return (
         <div className="backdrop" onClick={closeModal}>
-            
+                <button type="button" className="btn btn-danger rounded-circle" id='close_modal' onClick={() => setSelectedMovie(null)}>X</button>
                 <div className='movie_page'>
                     <div className='name'>
                         {movie.Title} ({movie.Year})
