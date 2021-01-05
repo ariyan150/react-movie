@@ -27,18 +27,18 @@ function Row({setSelectedMovie}) {
   }
   useEffect(()=>{
     const config = {
-        origin: 'top',
-        duration: 1000,
+        
+        duration: 2000,
         delay: 150,
         distance: '500px',
         scale: 1,
         
       }
-    sr.reveal('.movie', config)
-  },[])
+    sr.reveal('.container', config)
+  },[query])
   
     return (
-      <div className="containers">
+      <div className="container">
         <div className='Search bar mt-3'>
           <input class="form-control"
           value={query}

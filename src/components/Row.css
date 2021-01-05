@@ -33,3 +33,20 @@
     cursor: pointer;
   }
   
+
+  @media screen and (max-width:300px) {
+    .movies {
+      margin-top: 20px;
+      padding: 12px 5px;
+    }
+    .movie {
+      display: flex;
+      margin: 5px;
+      border-radius: 10px;
+    }
+    
+    .movie img {
+      width: 68px;
+      height: 100px;
+    }
+  }

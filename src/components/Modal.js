@@ -10,12 +10,10 @@ function Modal({ selectedMovie, setSelectedMovie }) {
     useEffect(()=>{
         const config = {
             origin: 'top',
-            duration: 1000,
+            duration: 2000,
             delay: 150,
             distance: '500px',
-            scale: 1,
-            
-          }
+          };
         sr.reveal('.movie_page', config)
     },[])
 
@@ -39,17 +37,16 @@ function Modal({ selectedMovie, setSelectedMovie }) {
         })
         
         },[movie])
-
-    useEffect(()=>{
-        console.log(trailer)
-    },[])
-
     
-
+        const closeModal = (e) => {
+            if (e.target.classList.contains('backdrop')){
+                setSelectedMovie(null);
+            }
+        }
     
 
     return (
-        <div className="backdrop" onClick={() => setSelectedMovie(null)}>
+        <div className="backdrop" onClick={closeModal}>
             
                 <div className='movie_page'>
                     <div className='name'>
@@ -57,14 +54,6 @@ function Modal({ selectedMovie, setSelectedMovie }) {
                     </div>
                     <div className='poster'>
                         <img src={movie.Poster} />
-                    </div>
-                    <div className='trailer'>
-                        {trailer &&
-                            <iframe width="560" height="315" src={trailer}
-                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                        }
-                        
                     </div>
                     <div className='detail'>
                         <div className='director'>
@@ -112,8 +101,8 @@ function Modal({ selectedMovie, setSelectedMovie }) {
                         <div className='rates'>
                             <div className='title_box'>Rates</div>
                             <div className='body_box' id='rate_body_box'>
-                                <div className='body_box_sub'>{movie.imdbRating}</div>     
-                                <div className='body_box_sub'>{movie.Metascore}</div>
+                                <section className='body_box_sub'>{movie.imdbRating}</section>     
+                                <section className='body_box_sub'>{movie.Metascore}</section>
                             </div>
                         </div>
                         <div className='plot'>
@@ -124,10 +113,7 @@ function Modal({ selectedMovie, setSelectedMovie }) {
                             
                         </div>
                     </div>
-                    
-                    
                 </div>
-            
         </div>
     );
 } 
