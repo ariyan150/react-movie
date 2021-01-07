@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css';
 import Header from './components/Header';
-import Row from './components/Row';
+import Movies from './components/Movies';
 import Modal from './components/Modal';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <Header user='Ariyan' />
-      <Row setSelectedMovie={setSelectedMovie} />
+      <Movies setSelectedMovie={setSelectedMovie} className='Movies'/>
       {selectedMovie && <Modal selectedMovie={selectedMovie} setSelectedMovie={setSelectedMovie} />}
     </div>
   );

@@ -1,5 +1,5 @@
  import { useState, useEffect } from 'react'
- import "./Row.css"
+ import "./Movies.css"
  import sr from './ScrollReveal'
 
 
@@ -43,7 +43,7 @@ function Row({setSelectedMovie}) {
   
     return (
       <div className="container">
-        <div className='Search bar mt-3'>
+        <div className='search bar mt-3'>
           <input class="form-control"
           value={query}
           onChange={onChange} type="text"
@@ -58,7 +58,7 @@ function Row({setSelectedMovie}) {
               <div className='title' >
                 {truncate(movie.Title, 10)} ({truncate(movie.Year, 5)})
               </div>
-              <div className='poster' onClick={() => setSelectedMovie(movie.imdbID)}>
+              <div className='poster'>
                 <img src={movie.Poster} alt={movie.Title} />
               </div>
               
