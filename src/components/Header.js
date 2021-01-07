@@ -3,6 +3,7 @@ import sr from './ScrollReveal'
 import { useEffect } from 'react'
 
 function Header({user}) {
+
   useEffect(()=>{
     const config = {
         origin: 'top',

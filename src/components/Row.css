@@ -12,27 +12,47 @@
     flex-wrap: wrap;
   }
   .movie {
-    display: flex;
+    background-color: rgb(46, 46, 46);
+    width: 170px;
+    height: 270px;
+    flex-direction: column;
+    flex-wrap: wrap;
     margin-right: 18px;
     margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.527);
   }
-  
+  .title {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 16px;
+  }
   .movie img {
     transition: 300ms;
     border-radius: 10px;
-    width: 150px;
-    height: 220px;
-    opacity: .75;
-  }
-  .movie img:hover{
-    transform: scale(1.06);
-    
+    width: 170px;
+    height: 250px;
     opacity: 1;
-    cursor: pointer;
   }
-  
+  .movie:hover img{
+    opacity: .6;
+  }
+  .movie:hover .buttons{
+    opacity: 1;
+  }
+  .buttons {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    top: -210px;
+    left: 0px;
+    transition: 420ms;
+  }
+  button {
+    margin: 5px 6px;
+  }
 
   @media screen and (max-width:300px) {
     .movies {

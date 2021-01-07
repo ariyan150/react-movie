@@ -36,6 +36,10 @@ function Row({setSelectedMovie}) {
       }
     sr.reveal('.container', config)
   },[query])
+
+  function truncate(str, n) {
+    return str.length > n ? str.substr(0, n-1) + "..." : str;
+  }
   
     return (
       <div className="container">
@@ -51,9 +55,20 @@ function Row({setSelectedMovie}) {
         <div className="movies" id='row_movies'>
           {movies.map(movie => (
             <div className='movie'>
+              <div className='title' >
+                {truncate(movie.Title, 10)} ({truncate(movie.Year, 5)})
+              </div>
               <div className='poster' onClick={() => setSelectedMovie(movie.imdbID)}>
                 <img src={movie.Poster} alt={movie.Title} />
               </div>
+              
+              <div className='buttons'>
+                <button type="button" class="btn btn-success" onClick={() => setSelectedMovie(movie.imdbID)}>Info</button>
+                <button type="button" class="btn btn-danger">Trailers</button>
+                <button type="button" class="btn btn-primary">Parents Guid</button>
+                <button type="button" class="btn btn-warning">Movies like this</button>
+              </div>
+              
             </div>
           ))}
           

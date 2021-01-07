@@ -38,10 +38,13 @@ function Modal({ selectedMovie, setSelectedMovie }) {
         
         },[movie])
     
-        const closeModal = (e) => {
-            if (e.target.classList.contains('backdrop')){
-                setSelectedMovie(null);
-            }
+    const closeModal = (e) => {
+        if (e.target.classList.contains('backdrop')){
+            setSelectedMovie(null);
+        }
+    }
+    function truncate(str, n) {
+        return str.length > n ? str.substr(0, n-1) + "..." : str;
         }
     
 
@@ -108,7 +111,9 @@ function Modal({ selectedMovie, setSelectedMovie }) {
                         <div className='plot'>
                             <div className='title_box'>Plot</div>
                             <div className='body_box'>
-                                {movie.Plot ? movie.Plot:'Unkown'}
+                                {truncate(
+                                    movie.Plot || 'none'
+                                    , 160)}
                             </div>
                             
                         </div>
