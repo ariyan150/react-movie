@@ -2,9 +2,9 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { useState } from 'react';
 import './App.css';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import Movies from './components/Movies';
 import Modal from './components/Modal';
-import BoxOffice from './components/BoxOffice';
 
 function App() {
   const [selectedMovie, setSelectedMovie] = useState(null)
@@ -23,6 +23,7 @@ function App() {
           <Route path='/x'>
             x
           </Route>
+          <Footer />
       </div>
     </Router>
   );

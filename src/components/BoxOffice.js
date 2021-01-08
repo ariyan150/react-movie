@@ -14,9 +14,11 @@ function BoxOffice() {
         <div className="BoxOffice__date">
             {date}
         </div>
-                {data.map(movie => 
+                {data.map((movie, index) => 
                     <div className="movie_row">
+                        <div className="number">#{index+1} </div>
                         <img src={movie.poster} />
+                        
                         <div className='info'>
                             <div className='info__title'>
                                 {movie.title}

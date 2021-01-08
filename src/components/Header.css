@@ -8,16 +8,30 @@
     z-index: 100;
 }
 .header__link {
-    font-size: 35px;
+    font-size: 25px;
     color: rgb(255, 255, 255);
-    margin: 0px 30px 0px 10px;
-    padding: 8px 0;
+    margin: 10px 15px 10px 15px;
+    padding:  0 0px 0 0;
     
+    transition: 350ms;
+}
+.header__link:nth-child(1){
+    font-size: 35px;
+}
+.header__link:hover {
+    transform: scale(1.07);
 }
 .header__user {
     font-size: 20px;
     color: rgb(255, 255, 255);
     margin: 0 20px 0 auto;
+    border: darkgrey solid;
+    padding: 2px 5px;
+    border-radius: 10px;
+}
+.vl {
+    border-left: 6px solid rgb(3, 125, 129);
+    height: 50px;
 }
 
 

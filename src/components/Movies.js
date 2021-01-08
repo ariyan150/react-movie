@@ -1,7 +1,7 @@
  import { useState, useEffect } from 'react'
  import "./Movies.css"
  import sr from './ScrollReveal'
- import BoxOffice from "./BoxOffice.js"
+ import BoxOffice from "./BoxOffice"
 
 
 function Row({setSelectedMovie}) {
@@ -27,15 +27,29 @@ function Row({setSelectedMovie}) {
     });
   }
   useEffect(()=>{
-    const config = {
-        
+    const midle = {
         duration: 2000,
         delay: 150,
         distance: '500px',
-        scale: 1,
-        
+        scale: 1
       }
-    sr.reveal('.container', config)
+      const left = {
+        origin: 'left',
+        duration: 2000,
+        delay: 150,
+        distance: '500px',
+        scale: 1
+      }
+      const right = {
+        origin: 'right',
+        duration: 2000,
+        delay: 150,
+        distance: '500px',
+        scale: 1
+      }
+    sr.reveal('.midle_page', midle);
+    sr.reveal('.left_page', left);
+    sr.reveal('.right_page', right);
   },[query])
 
   function truncate(str, n) {
@@ -70,10 +84,11 @@ function Row({setSelectedMovie}) {
                   {truncate(movie.Title, 10)} ({truncate(movie.Year, 5)})
                 </div>
                 <div className='poster'>
-                  <img src={movie.Poster} alt={movie.Title} />
+                  <img src={movie.Poster!='N/A' ? movie.Poster : 'https://images.unsplash.com/photo-1486693326701-1ea88c6e2af3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80' } alt={movie.Title} />
                 </div>
                 <div className='buttons'>
                   <button type="button" class="btn btn-success" onClick={() => setSelectedMovie(movie.imdbID)}>Info</button>
+                  <button type="button" class="btn btn-light">Add to Watchlist</button>
                   <button type="button" class="btn btn-danger">Trailers</button>
                   <button type="button" class="btn btn-primary">Parents Guid</button>
                   <button type="button" class="btn btn-warning">Movies like this</button>
