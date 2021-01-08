@@ -67,8 +67,8 @@ img {
 .body_box {
     padding: 15px;
     flex: 4;
-    background-color: rgb(230, 230, 230);
-    border-top: 6px solid rgb(143, 17, 59);
+    background-color: rgb(255, 255, 255);
+    border-top: 6px solid rgb(173, 15, 41);
 }
 
 .body_box_sub {
