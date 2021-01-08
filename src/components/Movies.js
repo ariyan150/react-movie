@@ -1,6 +1,7 @@
  import { useState, useEffect } from 'react'
  import "./Movies.css"
  import sr from './ScrollReveal'
+ import BoxOffice from "./BoxOffice.js"
 
 
 function Row({setSelectedMovie}) {
@@ -42,37 +43,46 @@ function Row({setSelectedMovie}) {
   }
   
     return (
-      <div className="container">
-        <div className='search bar mt-3'>
-          <input class="form-control"
-          value={query}
-          onChange={onChange} type="text"
-          placeholder="Search for movies"
-          aria-label="default input example">
-          </input>
+      <div className="page">
+
+        <div className='left_page'>
+          <div className='boxoffice_title'>
+            BoxOffice
+          </div>
+          <BoxOffice />
         </div>
 
-        <div className="movies" id='row_movies'>
-          {movies.map(movie => (
-            <div className='movie'>
-              <div className='title' >
-                {truncate(movie.Title, 10)} ({truncate(movie.Year, 5)})
+        <div className='midle_page'>
+
+          <div className='search bar mt-3'>
+            <input class="form-control"
+            value={query}
+            onChange={onChange} type="text"
+            placeholder="Search for movies"
+            aria-label="default input example">
+            </input>
+          </div>
+
+          <div className="movies" id='row_movies'>
+            {movies.map(movie => (
+              <div className='movie'>
+                <div className='title' >
+                  {truncate(movie.Title, 10)} ({truncate(movie.Year, 5)})
+                </div>
+                <div className='poster'>
+                  <img src={movie.Poster} alt={movie.Title} />
+                </div>
+                <div className='buttons'>
+                  <button type="button" class="btn btn-success" onClick={() => setSelectedMovie(movie.imdbID)}>Info</button>
+                  <button type="button" class="btn btn-danger">Trailers</button>
+                  <button type="button" class="btn btn-primary">Parents Guid</button>
+                  <button type="button" class="btn btn-warning">Movies like this</button>
+                </div>
               </div>
-              <div className='poster'>
-                <img src={movie.Poster} alt={movie.Title} />
-              </div>
-              
-              <div className='buttons'>
-                <button type="button" class="btn btn-success" onClick={() => setSelectedMovie(movie.imdbID)}>Info</button>
-                <button type="button" class="btn btn-danger">Trailers</button>
-                <button type="button" class="btn btn-primary">Parents Guid</button>
-                <button type="button" class="btn btn-warning">Movies like this</button>
-              </div>
-              
-            </div>
-          ))}
-          
+            ))}
+          </div>
         </div>
+        <div className='right_page'>Ads</div>
       </div>
     );
   }

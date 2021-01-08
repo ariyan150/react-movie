@@ -1,19 +1,28 @@
 .header {
     background-color: rgb(32, 30, 30);
-    text-align: center;
+    border-left: 25px #44E1F2 solid;
+    display: flex;
+    align-items: center;
     position: sticky;
     top: 0;
     z-index: 100;
 }
-h1 {
+.header__link {
+    font-size: 35px;
     color: rgb(255, 255, 255);
-    padding: 10px;
-    border-left: 25px #44E1F2 solid;
-
+    margin: 0px 30px 0px 10px;
+    padding: 8px 0;
+    
+}
+.header__user {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    margin: 0 20px 0 auto;
 }
 
+
 @media screen and (max-width:300px) {
-    h1 {
+    .header__link {
         padding: 5px;
         font-size: 17px;
     }

@@ -1,8 +1,14 @@
 import "./Header.css"
 import sr from './ScrollReveal'
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
+
 
 function Header({user}) {
+  const LinkStyle = {
+    color: 'white',
+    textDecoration: 'none',
+  }
 
   useEffect(()=>{
     const config = {
@@ -18,7 +24,9 @@ function Header({user}) {
 
     return (
       <div className="header">
-        <h1>Movies | {user} | React App</h1>
+        <div className='header__link'><Link to='/' style={LinkStyle}>React App</Link></div>
+        <div className='header__link'><Link to='/movies' style={LinkStyle}>Movies</Link></div>
+        <div className='header__user'>{user}</div>
       </div>
     );
   }
