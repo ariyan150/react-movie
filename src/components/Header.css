@@ -2,6 +2,7 @@
     background-color: rgb(32, 30, 30);
     border-left: 25px #44E1F2 solid;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     position: sticky;
     top: 0;
@@ -12,7 +13,6 @@
     color: rgb(255, 255, 255);
     margin: 10px 15px 10px 15px;
     padding:  0 0px 0 0;
-    
     transition: 350ms;
 }
 .header__link:nth-child(1){
@@ -35,9 +35,15 @@
 }
 
 
-@media screen and (max-width:300px) {
+@media screen and (max-width:420px) {
     .header__link {
         padding: 5px;
         font-size: 17px;
+    }
+    .header__link:nth-child(1){
+        font-size: 20px;
+    }
+    .header__user {
+        margin: 0 0 0 5px;
     }
 }
