@@ -1,0 +1,29 @@
+.register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wraper {
+  width: 380px;
+  margin: 50px 50px;
+  color: rgb(255, 255, 255);
+  background-color: #44e1f2;
+  padding: 18px 15px;
+  border-radius: 20px;
+}
+.wraper__header {
+  background-color: rgb(32, 30, 30);
+  border-radius: 10px;
+  margin: 0px 10px 10px 10px;
+  padding: 5px 0px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 600px) {
+  .register {
+    flex-direction: column;
+  }
+}

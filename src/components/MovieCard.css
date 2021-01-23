@@ -1,0 +1,80 @@
+.movie {
+  background-color: rgb(46, 46, 46);
+  width: 160px;
+  height: 260px;
+  margin-right: 18px;
+  margin-bottom: 20px;
+  border-radius: 15px 0px 25px 0px;
+  box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.527);
+  transition: 350ms;
+}
+.title {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 16px;
+}
+.movie img {
+  transition: 300ms;
+  border-radius: 0px 0px 25px 0px;
+  width: 160px;
+  height: 240px;
+  opacity: 1;
+}
+.movie:hover {
+  transform: scale(1.05);
+}
+.movie:hover img {
+  opacity: 0.5;
+}
+.movie:hover .buttons {
+  opacity: 1;
+}
+.buttons {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  bottom: 235px;
+  left: 0px;
+  transition: 420ms;
+}
+.buttons button {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 5px 11px;
+}
+
+@media screen and (max-width: 550px) {
+  .movie {
+    width: 240px;
+    height: 233px;
+    display: flex;
+    flex-direction: column;
+  }
+  .poster_buttons {
+    display: flex;
+  }
+  .movie img {
+    transition: 300ms;
+    border-radius: 0;
+    width: 140px;
+    height: 210px;
+    opacity: 1;
+  }
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    opacity: 1;
+    bottom: 0px;
+    left: 0px;
+    transition: 420ms;
+  }
+  .buttons button {
+    font-size: 11px;
+    font-weight: bold;
+    margin: 5px 11px;
+    width: 80px;
+  }
+}

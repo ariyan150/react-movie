@@ -25,8 +25,10 @@ function Header({user}) {
     return (
       <div className="header">
         <div className='header__link'><Link to='/' style={LinkStyle}>React App</Link></div>
-        <div class="vl"></div> 
+        <div class="vl"/> 
         <div className='header__link'><Link to='/movies' style={LinkStyle}>Movies</Link></div>
+        <div class="vl"/> 
+        <div className='header__link'><Link to='/register' style={LinkStyle}>SignIn / SignUp</Link></div>
         
         <div className='header__user'>{user}</div>
       </div>

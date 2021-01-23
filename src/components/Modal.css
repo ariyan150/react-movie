@@ -1,121 +1,123 @@
 .backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow-y: scroll;
 }
 .movie_page {
-    background-color: rgb(216, 216, 216);
-    border:#f5b031 solid 7px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin-bottom: 100px;
-    display: grid;
-    grid-template:
-        "name name" 
-        "poster detail"
-        / 340px 480px;
-    border-radius: 5px;
-    
+  background-color: rgb(216, 216, 216);
+  border: #f5b031 solid 7px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-bottom: 100px;
+  display: grid;
+  grid-template:
+    "name name"
+    "poster detail"
+    / 340px 480px;
+  border-radius: 5px;
 }
 #close_modal {
-    position: fixed;
-    z-index: 100;
-    top: 100px;
-    right: 20px;
+  position: fixed;
+  z-index: 100;
+  top: 100px;
+  right: 20px;
 }
 .name {
-    grid-area: name;
-    background-color: rgb(0, 217, 255);
-    text-align: center;
-    font-size: 30px;
-    padding: 10px 0px;
+  grid-area: name;
+  background-color: rgb(0, 217, 255);
+  text-align: center;
+  font-size: 30px;
+  padding: 10px 0px;
 }
 .poster {
-    grid-area: poster;
+  grid-area: poster;
 }
 img {
-    width: 340px;
-    height: 500px;
+  width: 340px;
+  height: 500px;
 }
 .detail {
-    grid-area: detail;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    flex-shrink: 1;
-    flex-direction: column;
-    
+  grid-area: detail;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-shrink: 1;
+  flex-direction: column;
 }
 .detail div {
-    display: flex;
+  display: flex;
 }
 
 .title_box {
-    flex: 1;
-    padding: 8px;
-    border-left: 6px solid rgb(196, 13, 171);
-    border-top: 6px solid rgb(65, 17, 143);
-    font-size: 18px;
-    background-color: rgb(41, 41, 41);
-    color: rgb(255, 255, 255);
+  width: 100px;
+  padding: 8px;
+  border-left: 6px solid rgb(196, 13, 171);
+  border-top: 6px solid rgb(65, 17, 143);
+  font-size: 18px;
+  background-color: rgb(41, 41, 41);
+  color: rgb(255, 255, 255);
 }
 .body_box {
-    padding: 15px;
-    flex: 4;
-    background-color: rgb(255, 255, 255);
-    border-top: 6px solid rgb(173, 15, 41);
+  width: 380px;
+  padding: 15px;
+  background-color: rgb(255, 255, 255);
+  border-top: 6px solid rgb(173, 15, 41);
 }
 
 .body_box_sub {
-    border-right: rgb(15, 17, 12) solid 5px;
-    padding: 15px;
+  border-right: rgb(15, 17, 12) solid 5px;
+  padding: 15px;
 }
-.plot, .actors, .genre  {
-    font-size: 12px;
-    font-weight: bold;
-    flex-shrink: 1;
+.plot,
+.actors,
+.genre {
+  font-size: 12px;
+  font-weight: bold;
+  flex-shrink: 1;
 }
 .plot {
-    flex: 1;
+  flex: 1;
 }
 #rate_body_box {
-    padding: 0;
-    padding-left: 25px;
+  padding: 0;
+  padding-left: 25px;
 }
 
-@media screen and (max-width:520px) {
-    .movie_page {
-        grid-template:
-        "name" 
-        "poster"
-        "detail"
-        / 210px;
-        margin-top: 280px;
-    }
-    img {
-        width: 210px;
-        height: 310px;
-    }
-    .name {
-        font-size: 18px;
-        padding: 10px 0px;
-    }
-    
-    .title_box {
-        padding: 3px 12px 0px 7px;
-        font-size: 14px;
-    }
-    .body_box {
-        padding: 8px;
-        font-size: 12px;
-        font-weight: bold;
-    }
-    #rate_body_box {
-        padding: 0;
-    }
+@media screen and (max-width: 520px) {
+  .movie_page {
+    grid-template:
+      "name"
+      "poster"
+      "detail"
+      / 210px;
+    margin-top: 280px;
+  }
+  img {
+    width: 210px;
+    height: 310px;
+  }
+  .name {
+    font-size: 18px;
+    padding: 10px 0px;
+  }
+
+  .title_box {
+    width: 80px;
+    padding: 3px 12px 0px 7px;
+    font-size: 14px;
+  }
+  .body_box {
+    width: 130px;
+    padding: 8px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  #rate_body_box {
+    padding: 0;
+  }
 }

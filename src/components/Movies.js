@@ -2,6 +2,7 @@
  import "./Movies.css"
  import sr from './ScrollReveal'
  import BoxOffice from "./BoxOffice"
+ import MovieCard from "./MovieCard"
 
 
 function Row({setSelectedMovie}) {
@@ -45,13 +46,9 @@ function Row({setSelectedMovie}) {
     sr.reveal('.left_page', left);
   },[query])
 
-  function truncate(str, n) {
-    return str.length > n ? str.substr(0, n-1) + "..." : str;
-  }
   
     return (
       <div className="page">
-
         <div className='left_page'>
           <div className='boxoffice_title'>
             BoxOffice
@@ -66,29 +63,14 @@ function Row({setSelectedMovie}) {
             value={query}
             onChange={onChange} type="text"
             placeholder="Search for movies"
-            aria-label="default input example">
+            aria-label="default input example"
+            id="search">
             </input>
           </div>
 
           <div className="movies" id='row_movies'>
             {movies.map(movie => (
-              <div className='movie'>
-                <div className='title' >
-                  {truncate(movie.Title, 10)} ({truncate(movie.Year, 5)})
-                </div>
-                <div className='poster_buttons'>
-                  <div className='poster'>
-                    <img src={movie.Poster!='N/A' ? movie.Poster : 'https://images.unsplash.com/photo-1486693326701-1ea88c6e2af3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80' } alt={movie.Title} />
-                  </div>
-                  <div className='buttons'>
-                    <button type="button" class="btn btn-success" onClick={() => setSelectedMovie(movie.imdbID)}>Info</button>
-                    <button type="button" class="btn btn-light">Watchlist</button>
-                    <button type="button" class="btn btn-danger">Trailers</button>
-                    <button type="button" class="btn btn-primary">Parents</button>
-                    <button type="button" class="btn btn-warning">like this</button>
-                  </div>
-                </div>
-              </div>
+              <MovieCard title={movie.Title} year={movie.Year} poster={movie.Poster} imdbid={movie.imdbID} setSelectedMovie={setSelectedMovie} />
             ))}
           </div>
         </div>

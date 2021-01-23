@@ -7,15 +7,7 @@ function Modal({ selectedMovie, setSelectedMovie }) {
     const [movie, setMovie] = useState(() => '');
     const [trailer, settrailer] = useState(null);
     
-    useEffect(()=>{
-        const config = {
-            origin: 'top',
-            duration: 2000,
-            delay: 150,
-            distance: '500px',
-          };
-        sr.reveal('.movie_page', config)
-    },[])
+    
 
     useEffect(()=>{
         fetch(`http://www.omdbapi.com/?i=${selectedMovie}&apikey=af3d009a`)
