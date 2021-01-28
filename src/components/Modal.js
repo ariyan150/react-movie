@@ -1,13 +1,9 @@
 import './Modal.css';
-import sr from './ScrollReveal'
 import { useState, useEffect } from 'react'
 
 
 function Modal({ selectedMovie, setSelectedMovie }) {
     const [movie, setMovie] = useState(() => '');
-    const [trailer, settrailer] = useState(null);
-    
-    
 
     useEffect(()=>{
         fetch(`http://www.omdbapi.com/?i=${selectedMovie}&apikey=af3d009a`)
@@ -15,20 +11,7 @@ function Modal({ selectedMovie, setSelectedMovie }) {
         .then(data => setMovie(data))
     },[])
 
-    useEffect(()=>{
-        fetch(`https://youtube-search-results.p.rapidapi.com/youtube-search/?q=${movie.Title}${movie.Year} trailer`, {
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-key": "ea4ba8f6aamsh23ffbbac2f6a618p1bd384jsna311b8e29f36",
-            "x-rapidapi-host": "youtube-search-results.p.rapidapi.com"
-        }
-        })
-        .then(response => response.json())
-        .then(data => {
-            data.items && settrailer("https://www.youtube.com/embed/" + data.items[1].id)
-        })
-        
-        },[movie])
+
     
     const closeModal = (e) => {
         if (e.target.classList.contains('backdrop')){
@@ -48,7 +31,7 @@ function Modal({ selectedMovie, setSelectedMovie }) {
                         {movie.Title} ({movie.Year})
                     </div>
                     <div className='poster'>
-                        <img src={movie.Poster!='N/A' ? movie.Poster : 'https://images.unsplash.com/photo-1486693326701-1ea88c6e2af3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80' } alt={movie.Title} />
+                        <img src={movie.Poster!=='N/A' ? movie.Poster : 'https://images.unsplash.com/photo-1486693326701-1ea88c6e2af3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80' } alt={movie.Title} />
                     </div>
                     <div className='detail'>
                         <div className='director'>

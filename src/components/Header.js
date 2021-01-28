@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 
 
 function Header({user}) {
+  const isLoggedIn = false
   const LinkStyle = {
     color: 'white',
     textDecoration: 'none',
@@ -28,9 +29,9 @@ function Header({user}) {
         <div class="vl"/> 
         <div className='header__link'><Link to='/movies' style={LinkStyle}>Movies</Link></div>
         <div class="vl"/> 
-        <div className='header__link'><Link to='/register' style={LinkStyle}>SignIn / SignUp</Link></div>
-        
-        <div className='header__user'>{user}</div>
+        <div className='header__user'>
+          {isLoggedIn ? user : <Link to='/register' style={LinkStyle}>SignIn / SignUp</Link>}
+        </div>
       </div>
     );
   }

@@ -7,10 +7,10 @@ function SignUp() {
         <div className='wraper'>
             <div className="wraper__header">Sign Up</div>
             <form id='signup_form' noValidate autoComplete="off">
-            <TextField id="standard-basic" name='username' label="User Name" />
-                <TextField id="standard-basic" name='email' label="Email" />
-                <TextField id="standard-basic" name='password' label="Password" />
-                <TextField id="standard-basic" name='password' label="Verify Password" />
+                <TextField id="standard-basic" name='username' label="User Name" />
+                <TextField id="standard-basic" type='emai' name='email' label="Email" />
+                <TextField id="standard-basic" name='password' type='password' label="Password" />
+                <TextField id="standard-basic" name='password' type='password' label="Verify Password" />
                 <hr/>
                 <Button type='submit' variant="contained" color="secondary">Submit</Button>
             </form> 

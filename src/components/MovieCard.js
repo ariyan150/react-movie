@@ -14,7 +14,7 @@ function MovieCard({ title, year, poster, imdbid, setSelectedMovie }) {
       </div>
       <div className='poster_buttons'>
         <div className='poster'>
-          <img src={poster!='N/A' ? poster : 'https://images.unsplash.com/photo-1486693326701-1ea88c6e2af3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80' } alt={title} />
+          <img src={poster !== 'N/A' ? poster : 'https://images.unsplash.com/photo-1486693326701-1ea88c6e2af3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80' } alt={title} />
         </div>
         <div className='buttons'>
           <button type="button" class="btn btn-success" onClick={() => setSelectedMovie(imdbid)}>Info</button>

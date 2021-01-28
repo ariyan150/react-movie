@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 84vh;
 }
 .wraper {
   width: 380px;
@@ -25,5 +26,9 @@
 @media screen and (max-width: 600px) {
   .register {
     flex-direction: column;
+    margin: 50px 0px;
+  }
+  .wraper {
+    margin: 0px 0px 20px 0px;
   }
 }
