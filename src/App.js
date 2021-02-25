@@ -6,8 +6,9 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Movies from './components/Movies';
 import Modal from './components/Modal';
-
 import Register from './components/register/Register';
+
+import UserPage from './components/user/UserPage';
 
 
 function App() {
@@ -17,10 +18,9 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header user='Ariyan' />
+          <Header user='Ariyan' />
           <Route path='/' exact>
-            {false ? <Redirect to="/movies" /> : 'Home Page'}
-            
+            {false ? <Redirect to="/movies" /> : <UserPage />}
           </Route>
           <Route path='/movies'>
             <Movies setSelectedMovie={setSelectedMovie} className='Movies'/>

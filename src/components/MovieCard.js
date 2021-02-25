@@ -1,7 +1,20 @@
 import './MovieCard.css';
+import axios from 'axios';
 
 
 function MovieCard({ title, year, poster, imdbid, setSelectedMovie }) {
+  const AddToList = e => {
+    e.preventDefault();
+    axios.post('http://127.0.0.1:8000/api/movies/',
+    {
+      "name": title,
+      "year": year,
+      "director": "N",
+      "img_url": poster
+    })
+    .then(res => console.log(res))
+    .catch(err => console.log(err));  
+  }
 
   function truncate(str, n) {
     return str.length > n ? str.substr(0, n-1) + "..." : str;
@@ -18,7 +31,7 @@ function MovieCard({ title, year, poster, imdbid, setSelectedMovie }) {
         </div>
         <div className='buttons'>
           <button type="button" class="btn btn-success" onClick={() => setSelectedMovie(imdbid)}>Info</button>
-          <button type="button" class="btn btn-light">Watchlist</button>
+          <button type="button" class="btn btn-light" onClick={AddToList}>Watchlist</button>
           <button type="button" class="btn btn-danger">Trailers</button>
           <button type="button" class="btn btn-primary">Parents</button>
           <button type="button" class="btn btn-warning">like this</button>

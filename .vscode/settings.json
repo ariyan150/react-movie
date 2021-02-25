@@ -1,4 +1,10 @@
 {
     "editor.codeActionsOnSave": null,
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "emmet.excludeLanguages": [
+        "markdown"
+    ],
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+     }
 }

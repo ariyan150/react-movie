@@ -3,17 +3,16 @@ import { useState, useEffect } from 'react'
 
 
 
-
 function BoxOffice() {
     const data = require('../BoxOffice.json').items;
     const date = require('../BoxOffice.json').date;
-    console.log(date)
 
     return (
       <div className="BoxOffice">
         <div className="BoxOffice__date">
             {date}
         </div>
+        <div className="BoxOffice__body">
                 {data.map((movie, index) => 
                     <div className="movie_row">
                         <div className="number">#{index+1} </div>
@@ -33,6 +32,7 @@ function BoxOffice() {
                     </div>
                     
                 )}
+            </div>
 
         
       </div>

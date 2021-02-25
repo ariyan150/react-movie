@@ -1,48 +1,59 @@
 .BoxOffice {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .BoxOffice__date {
-    color: rgb(53, 53, 53);
-    text-align: center;
-    margin: 5px 0 13px 0;
-    font-size: 17px;
-    font-weight: bold;
+  color: rgb(53, 53, 53);
+  text-align: center;
+  margin: 5px 0 13px 0;
+  font-size: 17px;
+  font-weight: bold;
 }
+
 .movie_row {
-    display: flex;
-    align-items: center;
-    background: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    border-radius: 15px;
-    margin: 0 0 12px 0;
-    width: 265px;
-    height: 73px;
+  display: flex;
+  align-items: center;
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border-radius: 15px;
+  margin: 0 0 12px 0;
+  width: 265px;
+  height: 73px;
 }
 .info {
-    display: flex;
-    flex-direction: column;
-    margin-top: 13px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 13px;
 }
 .info__title {
-    padding: 0px 0 0 7px;
+  padding: 0px 0 0 7px;
 }
 .numbers {
-    display: flex; 
+  display: flex;
 }
 .numbers p {
-    padding: 10px 8px 0 15px;
+  padding: 10px 8px 0 15px;
 }
 .movie_row img {
-    width: 50px;
-    height: 73px;
-    border-radius: 0 15px 15px 0;
+  width: 50px;
+  height: 73px;
+  border-radius: 0 15px 15px 0;
 }
 .movie_row .number {
-    background-color: rgb(4, 166, 187);
-    border-radius: 13px 0 0 13px;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 26px 4px;
+  background-color: rgb(4, 166, 187);
+  border-radius: 13px 0 0 13px;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 26px 4px;
+}
+@media screen and (max-width: 900px) {
+  .BoxOffice__body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .movie_row {
+    margin: 10px;
+  }
 }
